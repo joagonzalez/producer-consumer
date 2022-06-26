@@ -23,6 +23,7 @@ class LogsProducer:
           :return: Object for connection handling
           """
           try:
+               logging.debug(f'Brokers: {self.broker}')
                producer = KafkaProducer(bootstrap_servers=self.broker, 
                                         value_serializer=lambda x: json.dumps(x).encode('utf-8')      
                                         )

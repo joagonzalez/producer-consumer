@@ -20,6 +20,7 @@ class LogsConsumer:
           :return: Object for connection handling
           """
           try:
+               logging.debug(f'Brokers: {self.broker}')
                consumer = KafkaConsumer(self.topic,
                                         bootstrap_servers=self.broker,
                                         consumer_timeout_ms=60000,
@@ -35,6 +36,9 @@ class LogsConsumer:
                logging.error(f'Error trying to connect with kafka brokers. Error: {e}')
 
      def read(self):
+          """
+          Reader method for configured topic
+          """
           for msg in self.consumer:
                try:
                     print(f'Message from topic {self.topic}: {msg}')
@@ -42,6 +46,10 @@ class LogsConsumer:
                     print('error reading')
      
      def __del__(self):
+          """
+          Destroy consumer objetc and session agains broker when 
+          object is no more required
+          """
           try:
                self.consumer.close()
           except Exception as e:
