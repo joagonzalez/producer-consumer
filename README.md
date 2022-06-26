@@ -9,7 +9,7 @@ Producer and consumer basic application
 docker stack deploy -c docker-compose.yaml eventdriven
 ```
 
-<img src="docs/architecture.png" width="420" height="538" />
+<img src="docs/architecture.png" width="600" height="438" />
 
 ## Consumer command
 ```bash
