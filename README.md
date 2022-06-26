@@ -9,6 +9,8 @@ Producer and consumer basic application
 docker stack deploy -c docker-compose.yaml eventdriven
 ```
 
+<img src="docs/architecture.png" width="420" height="538" />
+
 ## Consumer command
 ```bash
 /kafka/bin/kafka-console-consumer.sh \
